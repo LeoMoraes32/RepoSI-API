@@ -1,0 +1,46 @@
+{
+  "name": "pre-cadastro-poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "prepare": "husky install",
+    "lint": "npx eslint .",
+    "start-dynamodb": "docker compose up",
+    "stop-dynamodb": "docker compose down",
+    "list-dynamodb-local-tables": "aws dynamodb list-tables --endpoint-url http://localhost:8000",
+    "start-dynamodb-migrations": "node src/infra/migrations/register-migration.js start",
+    "undo-dynamodb-migrations": "node src/infra/migrations/register-migration.js undo",
+    "populate-dynamodb-seeders": "node src/infra/seeders/register-seed.js populate",
+    "remove-dynamodb-seeders": "node src/infra/seeders/register-seed.js remove",
+    "dev": "nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielmissio/pre-cadastro-poc.git"
+  },
+  "author": "",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/gabrielmissio/pre-cadastro-poc/issues"
+  },
+  "homepage": "https://github.com/gabrielmissio/pre-cadastro-poc#readme",
+  "devDependencies": {
+    "eslint": "8.8.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-import": "2.25.4",
+    "eslint-plugin-prettier": "4.0.0",
+    "husky": "7.0.4",
+    "jest": "27.5.0",
+    "nodemon": "2.0.15",
+    "prettier": "2.5.1"
+  },
+  "dependencies": {
+    "aws-sdk": "2.1059.0",
+    "dotenv": "16.0.0",
+    "express": "4.17.2",
+    "mongoose": "^6.2.7"
+  }
+}
