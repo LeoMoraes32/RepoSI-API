@@ -14,6 +14,13 @@ class Repository {
   async getById(payload) {
     return this.schema.findById(payload);
   }
+
+  async updateById(id, body) {
+    return this.schema.findByIdAndUpdate(id, body, {
+      new: true,
+      runValidators: true
+    });
+  }
 }
 
 module.exports = Repository;

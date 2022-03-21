@@ -16,6 +16,12 @@ class PeopleService {
     const result = await PeopleRepository.getById(payload);
     return result;
   }
+
+  async updateById(id, body) {
+    const result = await PeopleRepository.updateById(id, body);
+    if (!result) throw new Error();
+    return result;
+  }
 }
 
 module.exports = new PeopleService();
