@@ -11,6 +11,11 @@ class PeopleService {
     if (!result) throw new Error();
     return result;
   }
+
+  async getById(payload) {
+    const result = await PeopleRepository.getById(payload);
+    return result;
+  }
 }
 
 module.exports = new PeopleService();

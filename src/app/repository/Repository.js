@@ -10,6 +10,10 @@ class Repository {
   async list(payload) {
     return this.schema.find(payload);
   }
+
+  async getById(payload) {
+    return this.schema.findById(payload);
+  }
 }
 
 module.exports = Repository;
