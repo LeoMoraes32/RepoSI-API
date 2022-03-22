@@ -21,6 +21,10 @@ class Repository {
       runValidators: true
     });
   }
+
+  async deleteById(payload) {
+    return this.schema.findByIdAndDelete(payload);
+  }
 }
 
 module.exports = Repository;
