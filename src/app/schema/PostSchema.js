@@ -19,7 +19,7 @@ const PostSchema = new mongoose.Schema(
       type: Number
     }
   },
-  { timestamps: true }
+  { timestamps: true, versionKey: false }
 );
 
 const Post = mongoose.model('Post', PostSchema);

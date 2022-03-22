@@ -1,4 +1,4 @@
-const PostRepository = require();
+const PostRepository = require('../repository/PostRepository');
 
 class PostService {
   async create(payload) {
@@ -8,6 +8,13 @@ class PostService {
 
   async list(payload) {
     const result = await PostRepository.list(payload);
+    console.log(result);
+    if (!result) throw new Error();
+    return result;
+  }
+
+  async getById(payload) {
+    const result = await PostRepository.getById(payload);
     if (!result) throw new Error();
     return result;
   }

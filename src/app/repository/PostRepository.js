@@ -1,4 +1,4 @@
-const PostSchema = require();
+const PostSchema = require('../schema/PostSchema');
 const Repository = require('./Repository');
 
 class PostRepository extends Repository {

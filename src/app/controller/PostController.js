@@ -13,7 +13,16 @@ class PostController {
   async list(req, res) {
     try {
       const result = await PostService.list(req.query);
-      return result.status(200).json(result);
+      return res.status(200).json(result);
+    } catch (error) {
+      return res.status(400).json(error);
+    }
+  }
+
+  async getById(req, res) {
+    try {
+      const result = await PostService.getById(req.params.id);
+      return res.status(200).json(result);
     } catch (error) {
       return res.status(400).json(error);
     }
