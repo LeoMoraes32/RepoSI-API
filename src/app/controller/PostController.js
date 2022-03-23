@@ -36,6 +36,15 @@ class PostController {
       return res.status(400).json(error);
     }
   }
+
+  async delete(req, res) {
+    try {
+      const result = await PostService.delete(req.params.id);
+      return res.status(200).json(result);
+    } catch (error) {
+      return res.status(400).json(error);
+    }
+  }
 }
 
 module.exports = new PostController();

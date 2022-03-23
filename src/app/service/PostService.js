@@ -23,5 +23,11 @@ class PostService {
     if (!result) throw new Error();
     return result;
   }
+
+  async delete(payload) {
+    const result = await PostRepository.deleteById(payload);
+    if (!result) throw new Error();
+    return result;
+  }
 }
 module.exports = new PostService();

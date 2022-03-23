@@ -5,5 +5,6 @@ module.exports = (server, routes, prefix = '/api/v1/post') => {
   routes.get('/', PostController.list);
   routes.get('/:id', PostController.getById);
   routes.patch('/:id', PostController.update);
+  routes.delete('/:id', PostController.delete);
   server.use(prefix, routes);
 };
